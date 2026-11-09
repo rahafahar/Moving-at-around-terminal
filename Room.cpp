@@ -3,18 +3,24 @@
 
 using namespace std;
 
-Room::Room(int x, int y){
+Room::Room(int x, int y,  Player * player){
 
+    //this->map = new char[x][y];
+    this->player = player;
     this->width = x;
     this->height = y;
 
-    this->map = char[x][y];
+    this->map = new char *[y];
 
-    for(int outerCounter; outerCounter < y; outerCounter++){
-        
-        for(int innerCounter; innerCounter < x; innerCounter++){
+    for(int outerCounter = 0; outerCounter < y; outerCounter++){
+        this->map[outerCounter] = new char[x];
+        for(int innerCounter = 0; innerCounter < x; innerCounter++){
 
-        if(outerCounter == 0 || outerCounter == (y-1) || innerCounter == 0 || innerCounter == (x-1) )
+            if(outerCounter == 0 || outerCounter == (y - 1) || innerCounter == 0 || innerCounter == (x - 1) ){
+                this->map[outerCounter][innerCounter] = '#';
+            } else {
+                this->map[outerCounter][innerCounter] = ' ';
+            }
         }
     }
 }
@@ -23,6 +29,20 @@ Room::~Room() {
 
 }
 
-Room::void draw() {
+bool Room::canMove(int x, int y) {
+    if(map[y][x] != '#'){
+        return true;
+    } else {
+        return false;
+    }
 
+}
+
+void Room::draw() {
+    for(int outerCounter = 0; outerCounter < height; outerCounter++){
+        for(int innerCounter = 0; innerCounter < width; innerCounter++){
+            cout << this->map[outerCounter][innerCounter];
+        }
+        cout << endl;
+    }
 }
