@@ -1,5 +1,5 @@
 
-/*
+
 #include "Item.h"
 
 Item::Item(char id, string name){
@@ -24,4 +24,11 @@ void Item::setName(string name) {
 
 }
 
-*/
+string Item::getNameFromId(char id) {
+
+    if(id = 'k'){
+        return "key";
+    } else{
+        return "not key"; //come back to this
+    }
+}

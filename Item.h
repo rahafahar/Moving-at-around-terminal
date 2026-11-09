@@ -1,5 +1,4 @@
 
-/*
 #include <iostream>
 
 using namespace std;
@@ -10,6 +9,7 @@ class Item {
         string name;
 
     public:
+        static string getNameFromId(char id);
         Item(char id , string name);
         char getId();
         string getName();
@@ -18,4 +18,3 @@ class Item {
 
 }
 
-*/

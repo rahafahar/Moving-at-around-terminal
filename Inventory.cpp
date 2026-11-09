@@ -1,5 +1,6 @@
 #include "Inventory.h"
- /*
+#include "Item.h"
+ 
 bool Inventory::addItem(Item i) {
 
     if(this->numOfItems >= this->arraySize){
@@ -19,7 +20,19 @@ bool Inventory::addItem(Item i) {
 }
 
 bool Inventory::removeItem(char id) {
-    this->numOfItems -= 1;
+    bool deleted = false;
+    for(int x = 0; x < numOfItems; x++){
+        if(this->items[numOfItems]->getId() == id){
+            delete this->items[numOfItems];
+            this->numOfItems -= 1;
+        }
+        if(deleted == true){
+            this->items[x - 1] = this->items[x];
+            this->items[x] =  nullptr;
+            numOfItems -= 1;
+        }
+    }
+    return deleted;
 }
 
 bool Inventory::hasItem(char id){
@@ -35,7 +48,8 @@ Inventory::Inventory(){
 }
         
 Inventory::~Inventory(){
-    delete[] this->items;
+    for(int x = 0; x < numOfItems; x++){
+        delete[] this->items;
+    }
 }
 
-*/

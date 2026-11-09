@@ -2,10 +2,12 @@
 #define PLAYER_H
 
 class Room;
+class Inventory;
 
 class Player{
     private:
-        //Inventory inventory;
+        void getItem(Room * r, int x, int y);
+        Inventory inventory;
         int x;
         int y;
         

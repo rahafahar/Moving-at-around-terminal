@@ -1,5 +1,7 @@
 #include "Player.h"
 #include "Room.h"
+#include "Item.h" 
+#include "Inventory.h" 
 #include <iostream>
 
 using namespace std;
@@ -44,4 +46,11 @@ bool Player::move(char direction, Room * room){
     } 
     //return true is player moves
     return false;
+}
+
+
+void Player::getItem(Room * r, int x, int y) {
+    Item itemFromMap = r->takeItem(x,y);
+    Item * item = new Item(itemFromMap->getId());
+    
 }
