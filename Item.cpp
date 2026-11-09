@@ -1,6 +1,7 @@
 
 
 #include "Item.h"
+#include <iostream>
 
 Item::Item(char id, string name){
     this->id = id;

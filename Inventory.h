@@ -1,5 +1,6 @@
 
-
+#ifndef ITEM_H
+#define ITEM_H
 #include "Item.h"
 
 using namespace std;
@@ -18,4 +19,5 @@ class Inventory {
         Inventory();
         ~Inventory();
 
-}
+};
+#endif

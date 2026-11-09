@@ -1,4 +1,5 @@
-
+#ifndef ITEM_H
+#define ITEM_H
 #include <iostream>
 
 using namespace std;
@@ -16,5 +17,6 @@ class Item {
         void setId(char id);
         void setName(string name);
 
-}
+};
 
+#endif

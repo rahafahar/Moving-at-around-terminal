@@ -1,5 +1,6 @@
 #include "Inventory.h"
 #include "Item.h"
+#include <iostream>
  
 bool Inventory::addItem(Item i) {
 
