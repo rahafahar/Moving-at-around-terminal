@@ -5,6 +5,7 @@ class Room;
 
 class Player{
     private:
+        //Inventory inventory;
         int x;
         int y;
         

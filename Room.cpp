@@ -1,4 +1,5 @@
 #include "Room.h"
+#include "Player.h"
 #include <iostream>
 
 using namespace std;
@@ -41,8 +42,24 @@ bool Room::canMove(int x, int y) {
 void Room::draw() {
     for(int outerCounter = 0; outerCounter < height; outerCounter++){
         for(int innerCounter = 0; innerCounter < width; innerCounter++){
-            cout << this->map[outerCounter][innerCounter];
+
+            if(this->player->getX() == innerCounter && this->player->getY() == outerCounter){
+                cout << "@";
+            }
+            else{
+                cout << this->map[outerCounter][innerCounter];
+            }
         }
         cout << endl;
     }
 }
+
+/*
+ void Room::placeItem(char i) {
+
+}
+        
+char Room::takeItem() {
+
+}
+*/

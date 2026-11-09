@@ -17,6 +17,8 @@ class Room{
         void draw();
         //char tileAt(int x, int y);
         bool canMove(int x, int y);
+      //  void placeItem(Item i);
+        //Item takeItem(int x, int y);
  
 
 };
